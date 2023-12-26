@@ -40,7 +40,7 @@ poetry install
 <h5><b>Choose your icon, input a number and enjoy.</b></h5>
 
 <h3> Preview </h3>
-<p><img src="card.png"></p>
+<p><img src="demo_card.png"></p>
 <h5> <p>Thanks to <a href="https://icons8.com">Icons 8</a> &amp; <a href="https://pngimg.com/">pngimg</a> for the awesome icons ! </p> </h5>
 <h5> <p>Thanks to <a href="https://github.com/httpanand">httpanand</a>  for the idea ! </p> </h5>
 <h5> <b> ⭐ Please star this repo if you like ! </b> </h5>

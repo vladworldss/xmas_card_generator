@@ -5,23 +5,23 @@ if __name__ == '__main__':
     border_color = input('Enter border color [default == \'red\']:\n').strip() or 'red'
     canvas_color = input('Enter canvas color [default == \'green\']:\n').strip() or 'green'
     gifter = input("Enter gifter name [default == \'Anonymous\']:\n") or 'Anonymous'
-    receiver = input('Enter name of the receiver [default == \'Anonymous\']:\n').strip() or 'Anonymous'
+    receiver = input('Enter name of the receiver [default == \'Grinch\']:\n').strip() or 'Grinch'
     output_file = input("enter output file name [default == \'card\']: \n").strip() or 'card'
 
     header_icons = '''
-  1)Santa Hat [default]
-  2)Xmas Tree
-  3)Bell
-  4)Grinch
+  1)Grinch [default]
+  2)Santa Hat
+  3)Xmas Tree
+  4)Bell
   5)Gift
   6)Xmas Door Deco
   '''
 
     header_map = {
-        '1': HeaderIcon.hat,
-        '2': HeaderIcon.tree,
-        '3': HeaderIcon.bell,
-        '4': HeaderIcon.grinch,
+        '1': HeaderIcon.grinch,
+        '2': HeaderIcon.hat,
+        '3': HeaderIcon.tree,
+        '4': HeaderIcon.bell,
         '5': HeaderIcon.gift,
         '6': HeaderIcon.door_deco,
     }
@@ -35,16 +35,18 @@ if __name__ == '__main__':
             break
 
     footer_icons = '''
-  1)Ribbon [default]
-  2)Deer
-  3)Candy
+    1)Anonymous [default]
+    2)Deer
+    3)Ribbon
+    4)Candy
 
   '''
 
     footer_map = {
-        '1': FooterIcon.ribbon,
+        '1': FooterIcon.anonymous,
         '2': FooterIcon.deer,
-        '3': FooterIcon.candy,
+        '3': FooterIcon.ribbon,
+        '4': FooterIcon.candy,
     }
 
     footer_icon = None

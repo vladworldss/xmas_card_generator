@@ -28,7 +28,6 @@ class XmasGenerator:
         self._footer_icon = footer_icon
 
         self._output_file = output_file
-
         self._assets_dir = assets_dir
         self._fonts_dir = fonts_dir
 
@@ -37,54 +36,12 @@ class XmasGenerator:
 
         self._draw = ImageDraw.Draw(self._image)
 
-        self._header_map = {
-            HeaderIcon.hat: self._draw_hat,
-            HeaderIcon.tree: self._draw_tree,
-            HeaderIcon.bell: self._draw_bell,
-            HeaderIcon.grinch: self._draw_grinch,
-            HeaderIcon.gift: self._draw_gift,
-            HeaderIcon.door_deco: self._draw_door_deco,
-        }
-
-        self._footer_map = {
-            FooterIcon.ribbon: self._draw_ribbon,
-            FooterIcon.deer: self._draw_deer,
-            FooterIcon.candy: self._draw_candy,
-        }
-
-    def _draw_hat(self) -> None:
-        icon = Image.open(os.path.join(self._assets_dir, HeaderIcon.hat))
-        icon = icon.resize((60, 60))
-        self._image.paste(icon, (102, 20), icon)
-
-    def _draw_tree(self) -> None:
-        icon = Image.open(os.path.join(self._assets_dir, HeaderIcon.tree))
-        icon = icon.resize((70, 70))
-        self._image.paste(icon, (98, 20), icon)
-
-    def _draw_bell(self) -> None:
-        icon = Image.open(os.path.join(self._assets_dir, HeaderIcon.bell))
-        icon = icon.resize((70, 70))
-        self._image.paste(icon, (98, 20), icon)
-
-    def _draw_grinch(self) -> None:
-        icon = Image.open(os.path.join(self._assets_dir, HeaderIcon.grinch))
-        icon = icon.resize((70, 70))
-        self._image.paste(icon, (98, 20), icon)
-
-    def _draw_gift(self) -> None:
-        icon = Image.open(os.path.join(self._assets_dir, HeaderIcon.gift))
-        icon = icon.resize((70, 70))
-        self._image.paste(icon, (98, 20), icon)
-
-    def _draw_door_deco(self) -> None:
-        icon = Image.open(os.path.join(self._assets_dir, HeaderIcon.door_deco))
-        icon = icon.resize((70, 70))
-        self._image.paste(icon, (98, 20), icon)
-
     def _draw_header(self) -> None:
-        self._header_map[self._header_icon]()
-        msg = f'Dear {self._receiver}'
+        icon = Image.open(os.path.join(self._assets_dir, self._header_icon))
+        icon = icon.resize((70, 70))
+        self._image.paste(icon, (98, 20), icon)
+
+        msg = f'Dear {self._receiver},'
 
         self._draw.text((25, 120), msg, self._text_color, font=self._font)
 
@@ -98,28 +55,15 @@ do wonders too!
 Merry Christmas!
 
 '''
-
         self._draw.text((40, 120), msg, self._text_color, font=self._font)
-
-    def _draw_ribbon(self) -> None:
-        icon = Image.open(os.path.join(self._assets_dir, FooterIcon.ribbon))
-        icon = icon.resize((70, 70))
-        self._image.paste(icon, (98, 300), icon)
-
-    def _draw_deer(self) -> None:
-        icon = Image.open(os.path.join(self._assets_dir, FooterIcon.deer))
-        icon = icon.resize((70, 70))
-        self._image.paste(icon, (98, 300), icon)
-
-    def _draw_candy(self) -> None:
-        icon = Image.open(os.path.join(self._assets_dir, FooterIcon.candy))
-        icon = icon.resize((70, 70))
-        self._image.paste(icon, (98, 300), icon)
 
     def _draw_footer(self) -> None:
         msg = f'From {self._gifter}'
         self._draw.text((25, 280), msg, self._text_color, font=self._font)
-        self._footer_map[self._footer_icon]()
+
+        icon = Image.open(os.path.join(self._assets_dir, self._footer_icon))
+        icon = icon.resize((70, 70))
+        self._image.paste(icon, (98, 300), icon)
 
     def draw(self) -> None:
         self._draw_header()

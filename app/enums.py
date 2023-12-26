@@ -2,15 +2,16 @@ from enum import Enum
 
 
 class HeaderIcon(str, Enum):
+    grinch = 'grinch.png'
     hat = 'hat.png'
     tree = 'tree.png'
     bell = 'bell.png'
-    grinch = 'grinch.png'
     gift = 'gift.png'
     door_deco = 'door_deco.png'
 
 
 class FooterIcon(str, Enum):
-    ribbon = 'ribbon.png'
+    anonymous = 'anonymous.png'
     deer = 'deer.png'
+    ribbon = 'ribbon.png'
     candy = 'candy.png'
